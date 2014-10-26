@@ -1,65 +1,17 @@
-@{
-    var db = Database.Open("Events");
-    var selectQueryString = "SELECT * FROM Events ORDER BY Date";
- }
-
-<!DOCTYPE html>
 <html>
- <head>
-   <title>My Events</title>
-   <style>
-       table, th, td {
-         border: solid 1px #000000;
-         border-collapse: collapse;
-         padding: 5px;
-       }
+<title> USC Events </title>
 
+<style>
     body {
         background-color:#6CC2DA;
     }
+</style>
 
-    </style>
- </head>
- <body>
-	<center>
-	<div style="width:100%;height:17%;float:center;">
-	<h1>Event Hub</h1>
-    <h1>My Events</h1>
-	<a href="index.html" target="_parent"><button>Home</button></a>
-	</div>
-	</center>
-	<div style="width:70%;height:80%;float:left;">
-    <table>
-       <thead>
-           <tr>
-               <th>Category</th>
-               <th>Name</th>
-               <th>Location</th>
-               <th>Date</th>
-               <th>Details</th>
-
-           </tr>
-       </thead>
-       <tbody>
-			<br>
-           @foreach(var row in db.Query(selectQueryString)){
-            <tr>
-                   <td>@row.Category</td>
-                   <td>@row.Name</td>
-                   <td>@row.Location</td>
-                   <td>@row.Date</td>
-                   <td>@row.Details</td>
-				   <td><a href="makeEvent.html" target="makeEventiFrame">Edit</a></td>
-				   <td>Delete</td>
-            </tr>
-           }
-       </tbody>
-   </table>
-   
-   </div>
-   <div style="width:30%;height:80%;float:right;">
-   <iframe src="makeEvent.html" id="makeEventiFrame" frameborder="0" width="100%" height="100%"></iframe>
-   </div>
-
- </body>
+<body>
+<center>
+Tables everywhere
+<a href="index.html" target="_parent"><button>Home</button></a>
+<a href="events.html" target="_parent"><button>Check out these events!</button></a>
+<a href="submit.html" target="_parent"><button>Submit an event!</button></a>
+</body>
 </html>
