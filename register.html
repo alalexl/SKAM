@@ -45,8 +45,10 @@
     	border:2px solid #ccc; 
 		-webkit-border-radius: 5px;
 		border-radius: 10px;
-}
-input[type=text]:focus {border-color:#333; }
+	}
+	body {
+		font-family: arial;
+	}
 </style>
 
 <body>
@@ -56,13 +58,13 @@ input[type=text]:focus {border-color:#333; }
 	</form>
 
 <div class="forms">
-<br>Login Here:<br /><br>
+<h2>Login Here:</h2><br>
 <form name="input" action="myEvents.html" method="post" style="float:center;">
-	Username <input type="text" name="username" size="20"> <br />
-	Password <input type="password" name="password" size="20"> <br />
-	<input type="submit" value="Submit" name="login" id="login"><br />
+	Username <input type="text" name="username" size="20">
+	Password <input type="password" name="password" size="20">
+	<input type="submit" value="Submit" name="login" id="login">
 </form>
-<br>Register Here:<br /><br>
+<br><h2>Register Here:</h2><br />
 <form name="register" action="myevents.html" method="post">
 	Email <input pattern="[0-9A-Za-z]{1,}[@][A-Za-z]{1,}[.][A-Za-z]{3,}" required title="Valid email required" type="email" name="username" size="20">
 	Password <input pattern=".{8,20}" required title="Minimum 8 characters required" type="password" name="password" size="20">
