@@ -29,7 +29,7 @@
 <!DOCTYPE html>
 <html>
     <head>
- <title>USC Events</title>
+ <title>New Events</title>
  <style src="C:/Users/darth_000/Documents/Junior Project/" type="text/css">
     label {float:left; width: 8em; text-align: right;
            margin-right: 0.5em;}
@@ -47,35 +47,15 @@
 
 <body>
 
-  <script>
-    var url=window.location.toString();
-    var query_string=url.split("?");     
-    //var midChoice=query_string[1].split("&");
-    var choices1=query_string[1].split("=");
-    var eventId=choices1[1];
-	//var hi = "hi";
-    //var choices2=midChoice[1].split("=");
-    //var compIndex=choices2[1];  
-	if( eventId == 1 )
-	{
-	  document.write("<h1>yay</h1>");
-	}
-	document.write("<h2>ugh</h2>");
-  </script>
-
 
     <h1>Add New Event</h1>
 
- @Html.ValidationSummary("Errors with your submission:")
-<script>
-  if( eventId == 1 )
-  {
-    
+ @Html.ValidationSummary("Errors with your submission:")    
 
  <form method="post" action="">
    <fieldset>
-     <legend>Add Product</legend>
-     <div>
+     <legend>Event</legend>
+	 <div>
        <label>Category</label>
        <input name="Category" type="text" size="50" value="@Category" />
      </div>
@@ -88,13 +68,21 @@
        <label>Location</label>
        <input name="Location" type="text" size="50" value="@Location" />
      </div>
+	 <div>
+       <label>Date</label>
+       <input name="Date" type="text" size="50" value="@Date" />
+     </div>
+	 <div>
+       <label>Details</label>
+       <input name="Details" type="text" size="50" value="@Details" />
+     </div>
      <div>
       <label>&nbsp;</label>
-      <input type="submit" value="Changes" name="submit" id="submit">
+      <input type="submit" value="Add" name="submit" id="submit">
 	</div>
    </fieldset>
-  </form>");
-  }
+  </form>
+  
 </body>
 
 </html>

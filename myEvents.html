@@ -53,7 +53,7 @@
                    <td>@row.Date</td>
                    <td>@row.Details</td>
 				   <script>
-				     document.write("<td><a href='newEvents.html?eventId=1' target='makeEventiFrame'>Edit</a>");
+				     document.write("<td><a href='editEvents.html' target='makeEventiFrame'>Edit</a>");
 				   </script>	
 				   <td><button onclick="deleteFunction()">delete</button></td>
             </tr>
@@ -63,7 +63,7 @@
    </center>
    </div>
    <div style="width:40%;height:80%;float:right;">
-   <iframe src="newEvents.html?eventId=0" id="makeEventiFrame" name="makeEventiFrame" frameborder="0" width="100%" height="100%"></iframe>
+   <iframe src="newEvents.html" id="makeEventiFrame" name="makeEventiFrame" frameborder="0" width="100%" height="100%"></iframe>
    </div>
   <script>
     function deleteFunction()
