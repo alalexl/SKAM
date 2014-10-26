@@ -10,20 +10,43 @@
    <style>
     body {
         background-color:#6CC2DA;
+        font-family:arial;
     }
-       table, th, td {
-         border: solid 1px #bbbbbb;
-         border-collapse: collapse;
-         padding: 2px;
-       }
+    table, th, td {
+        border: solid 1px #bbbbbb;
+        border-collapse: collapse;
+        padding: 2px;
+    }
+    h1 {
+    	font-size:300%;
+    }
+    #myevents {
+    	background-color: #ccc;
+    	-moz-border-radius: 5px;
+    	-webkit-border-radius: 5px;
+    	border-radius:4px;
+    	color: #fff;
+    	font-size 30px;
+    	border:none;
+    }
+    #login {
+    	background-color: #ccc;
+    	-moz-border-radius: 5px;
+    	-webkit-border-radius: 5px;
+    	border-radius:4px;
+    	color: #fff;
+    	font-size 30px;
+    	border:none;
+    }
+}
     </style>
  </head>
  <body>
 <br><br><br>
-
-<a href="register.html" target="_parent" style="float:right;"><button>Log in/Register</button></a>
-<br>
- <select>
+	<form action="register.html">
+    	<input type="submit" value="Log in/Register" name="login" id="login">
+	</form><br>
+    <select>
 	<option>All</option>
 	<option>Sports</option>
 	<option>Concerts</option>
@@ -37,10 +60,12 @@
 	<option>Other</option>
  </select>
  <center>
-   <h1>Events</h1>
-   <h1>All Events</h1>
-    <a href="myEvents.html" target="_parent"><button>My Events</button></a>
-	<br>
+    <h1>EventHub</h1>
+    <h2>Your source for all USC events</h1>
+    <form action="myEvents.html">
+    	<input type="submit" value="My Events" name="myevents" id="myevents">
+	</form>
+    <br>
 
    <table>
        <thead>
