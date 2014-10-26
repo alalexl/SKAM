@@ -1,4 +1,5 @@
-@{
+@
+{
     var db = Database.Open("Events");
     var selectQueryString = "SELECT * FROM Events ORDER BY Date";
  }
@@ -6,6 +7,15 @@
 <!DOCTYPE html>
 <html>
  <head>
+ 	<right>
+<a href="register.html" target="_parent" style="float:right;"><button>register</button></a>
+<br>
+<form name="input" action="events.html" method="post" style="float:right;">
+	Username <input type="text" name="username" size="20">
+	Password <input type="password" name="password" size="20">
+	<input type="submit" value="Submit">
+</form>
+	</right>
    <title>All Events</title>
    <style>
     body {
@@ -18,9 +28,17 @@
        }
     </style>
  </head>
- <a href="events.html" target="_parent"><button>My Events</button></a>
  <body>
+ <select>
+	<option>Mark</option>
+	<option>Butts</option>
+	<option>Salutations</option>
+ </select>
+ <center>
    <h1>All Events</h1>
+    <a href="events.html" target="_parent"><button>My Events</button></a>
+	<br>
+
    <table>
        <thead>
            <tr>
