@@ -1,0 +1,88 @@
+﻿@{
+    Validation.RequireField("Category", "Category is required.");
+    Validation.RequireField("Name", "Name is required.");
+    Validation.RequireField("Location", "Location is required.");
+    Validation.RequireField("Date", "Date is required.");
+    Validation.RequireField("Details", "Details is required.");
+    
+
+    var db = Database.Open("Events");
+    var Category = Request.Form["Category"];
+    var Name = Request.Form["Name"];
+    var Location = Request.Form["Location"];
+    var Date = Request.Form["Date"];
+    var Details = Request.Form["Details"];
+
+    if (IsPost && Validation.IsValid()) {
+        // Define the insert query. The values to assign to the
+        // columns in the Product table are defined as parameters
+        // with the VALUES keyword.
+        if(ModelState.IsValid) {
+            var insertQuery = "INSERT INTO Events (Category, Name, Location, Date, Details, Login, Passwords) " +
+                "VALUES (@0, @1, @2, @3, @4)";
+            db.Execute(insertQuery, Category, Name, Location, Date, Details, Login, Passwords);
+            // Display the page that lists products.
+            Response.Redirect("~/Events");
+        }
+    }
+}
+<!DOCTYPE html>
+<html>
+    <head>
+ <title>USC Events</title>
+ <style type="text/css">
+    label {float:left; width: 8em; text-align: right;
+           margin-right: 0.5em;}
+    fieldset {padding: 1em; border: 1px solid; width: 50em;}
+    legend {padding: 2px 4px; border: 1px solid; font-weight:bold;}
+    .validation-summary-errors {font-weight:bold; color:red;
+           font-size: 11pt;}
+     body {
+        background-color:#6CC2DA;
+    }
+ </style>
+
+</head>
+
+<body>
+	<center>
+	<h1>Events are a go</h1>
+
+	<p>Move out tEAM</p>
+	
+	<div id="container" style="width:870px">>
+	<a href="index.html" target="_parent"><button>Home</button></a>
+	<a href="events.html" target="_parent"><button>Check out these events!</button></a>
+	<a href="submit.html" target="_parent"><button>Submit an event!</button></a>
+	</div>
+	</center>
+
+    <h1>Add New Product</h1>
+
+ @Html.ValidationSummary("Errors with your submission:")
+
+ <form method="post" action="">
+   <fieldset>
+     <legend>Add Product</legend>
+     <div>
+       <label>Category</label>
+       <input name="Category" type="text" size="50" value="@Category" />
+     </div>
+     <div>
+       <label>Name</label>
+       <input name="Name" type="text" size="50"
+           value="@Name" />
+     </div>
+     <div>
+       <label>Location</label>
+       <input name="Location" type="text" size="50" value="@Location" />
+     </div>
+     <div>
+       <label>&nbsp;</label>
+       <input type="submit" value="Insert" class="submit" />
+     </div>
+   </fieldset>
+ </form>
+</body>
+
+</html>

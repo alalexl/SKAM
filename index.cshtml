@@ -1,0 +1,47 @@
+﻿@{
+    var db = Database.Open("Events");
+    var selectQueryString = "SELECT * FROM Events ORDER BY Date";
+ }
+
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>All Events</title>
+   <style>
+       table, th, td {
+         border: solid 1px #bbbbbb;
+         border-collapse: collapse;
+         padding: 2px;
+       }
+    </style>
+ </head>
+ <body>
+   <h1>All Events</h1>
+   <table>
+       <thead>
+           <tr>
+               <th>Category</th>
+               <th>Name</th>
+               <th>Location</th>
+               <th>Date</th>
+               <th>Details</th>
+           </tr>
+       </thead>
+       <tbody>
+           @foreach(var row in db.Query(selectQueryString)) {
+           if (@row.Category == "Viterbi")
+           {
+            <tr>
+                   <td>@row.Category</td>
+                   <td>@row.Name</td>
+                   <td>@row.Location</td>
+                   <td>@row.Date</td>
+                   <td>@row.Details</td>
+            </tr>   
+            }
+            
+           }
+       </tbody>
+   </table>
+ </body>
+</html>
