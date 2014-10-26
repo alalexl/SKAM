@@ -18,7 +18,7 @@
     	-moz-border-radius: 5px;
     	-webkit-border-radius: 5px;
     	border-radius:10px;
-    	color: #fff;
+    	color: #FFFFFF;
     	font-size 30px;
     	border:none;
     }
@@ -52,23 +52,26 @@
 </style>
 
 <body>
+	
 <center>
-	<form action="index.html">
-    	<input type="submit" value="Home" name="index" id="index">
+	<form action="index.html" style="font-size:40px">
+    	<input type="submit" value="Home" name="index" id="index" style="color:white; background-color:#5CB2CA; font-size:40px; border-radius:15px; border: solid 1px #DDDDDD">
 	</form>
 
 <div class="forms">
-<h2>Login Here:</h2><br>
-<form name="input" action="myEvents.html" method="post" style="float:center;">
+<h2 style="font-size:40px; color:#000000">Login Here:</h2>
+<form name="input" action="myEvents.html" method="post" style="float:center; color:white; font-size: 30px">
 	Username <input type="text" name="username" size="20">
 	Password <input type="password" name="password" size="20">
-	<input type="submit" value="Submit" name="login" id="login">
+	<input type="submit" value="Submit" name="login" id="login" style="color:white; font-size:20px; background-color:#5CB2CA; border: solid 1px #DDDDDD;">
 </form>
-<br><h2>Register Here:</h2><br />
-<form name="register" action="myevents.html" method="post">
+<br><br>
+<hr>
+<h2 style="font-size:40px">Register Here:</h2>
+<form name="register" action="myevents.html" method="post" style="float:center; color:white; font-size: 30px">
 	Email <input pattern="[0-9A-Za-z]{1,}[@][A-Za-z]{1,}[.][A-Za-z]{3,}" required title="Valid email required" type="email" name="username" size="20">
 	Password <input pattern=".{8,20}" required title="Minimum 8 characters required" type="password" name="password" size="20">
-	<input type="submit" value="Submit" name="register" id="register">
+	<input type="submit" value="Submit" name="register" id="register" style="color:white; font-size:20px; background-color:#5CB2CA; border: solid 1px #DDDDDD;">
 </form>
 </div>
 </center

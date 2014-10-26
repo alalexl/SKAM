@@ -7,41 +7,35 @@
 <!DOCTYPE html>
 <html>
  <head>
+ 	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
    <style>
-    body {
-        background-color:#6CC2DA;
-        font-family:arial;
-    }
+ 
     table, th, td {
-        border: solid 1px #bbbbbb;
+        border: solid 2px #000000;
         border-collapse: collapse;
-        padding: 2px;
+        padding: 30px;
+		
     }
-    h1 {
-    	font-size:300%;
-    }
+    
     #myevents {
-    	background-color: #ccc;
-    	-moz-border-radius: 5px;
-    	-webkit-border-radius: 5px;
-    	border-radius:4px;
+    	background-color: #5CB2CA;
+    	
+    	border-radius:15px;
     	color: #fff;
-    	font-size 30px;
-    	border:none;
+    	font-size: 30px;
+    	border-color:white;
     }
     #login {
-    	background-color: #ccc;
-    	-moz-border-radius: 5px;
-    	-webkit-border-radius: 5px;
-    	border-radius:4px;
+    	background-color: #5CB2CA;
+    	border-radius:15px;
     	color: #fff;
-    	font-size 30px;
-    	border:none;
+    	font-size: 30px;
+    	border-color:white;
     }
 }
     </style>
  </head>
- <body>
+ <body style="border:3px solid black">
 <br><br><br>
     <select>
 	<option>All</option>
@@ -57,19 +51,20 @@
 	<option>Other</option>
  </select>
  <center>
-    <h1>EventHub</h1>
-    <h2>Your source for all USC events</h1>
+ <h1><span style="color:orange">S</span>C<span style="color:blue">H</span><span style="color:green">u</span><span style="color:yellow">b</span></h1>
+    <p style="border:1px">Your source for all USC events</p>
+	<hr>
     <form action="register.html">
-    	<input type="submit" value="Log in/Register" name="login" id="login">
+    	<input type="submit" value="Log in/Register" name="login" id="login" style="color:#FFFFFF">
 	</form>
     <form action="myEvents.html">
-    	<input type="submit" value="My Events" name="myevents" id="myevents">
+    	<input type="submit" value="My Events" name="myevents" id="myevents" style="color:#FFFFFF">
 	</form>
     <br>
 
    <table>
-       <thead>
-           <tr>
+       <thead style="background-color:#5CB2CA">
+           <tr style="color:white">
                <th>Category</th>
                <th>Name</th>
                <th>Location</th>
@@ -79,7 +74,7 @@
        </thead>
        <tbody>
            @foreach(var row in db.Query(selectQueryString)){
-            <tr>
+            <tr style="color:white">
                    <td>@row.Category</td>
                    <td>@row.Name</td>
                    <td>@row.Location</td>
@@ -89,5 +84,7 @@
            }
        </tbody>
    </table>
+   
+  
  </body>
 </html>
